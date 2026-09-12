@@ -255,7 +255,7 @@ h2 {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 11vh;
+    bottom: calc(11vh + env(safe-area-inset-bottom));
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -495,7 +495,6 @@ h2 {
     display: inline-block;
     margin-top: 30px;
     padding: 10px 18px;
-    border: 1px solid rgba(255, 255, 255, .6);
     border-radius: 999px;
     color: #fff;
     text-decoration: none;
@@ -1596,8 +1595,8 @@ footer { position: relative; overflow: hidden; padding: 86px 20px; background: r
 .scroll-cue:focus-visible { outline: 2px solid #f4d38e; outline-offset: 5px; border-radius: 4px; }
 
 .scroll-cue-label {
-    font: 600 9px Cinzel, serif;
-    letter-spacing: .24em;
+    font: 600 7px Cinzel, serif;
+    letter-spacing: .22em;
     text-transform: uppercase;
     white-space: nowrap;
 }
@@ -1614,17 +1613,17 @@ footer { position: relative; overflow: hidden; padding: 86px 20px; background: r
 
 .scroll-cue-mouse i {
     width: 2px;
-    height: 6px;
+    height: 5px;
     background: #f4d38e;
     border-radius: 2px;
     animation: scroll-wheel 1.8s ease-in-out infinite;
 }
 
 .scroll-cue-chevron {
-    width: 8px;
-    height: 8px;
-    border-right: 1.5px solid #f4d38e;
-    border-bottom: 1.5px solid #f4d38e;
+    width: 7px;
+    height: 7px;
+    border-right: 1.3px solid #f4d38e;
+    border-bottom: 1.3px solid #f4d38e;
     transform: rotate(45deg);
     animation: scroll-chevron 1.8s ease-in-out infinite;
 }
@@ -1632,23 +1631,23 @@ footer { position: relative; overflow: hidden; padding: 86px 20px; background: r
 @keyframes scroll-wheel {
     0%, 25% { opacity: 0; transform: translateY(0); }
     45% { opacity: 1; }
-    80%, 100% { opacity: 0; transform: translateY(8px); }
+    80%, 100% { opacity: 0; transform: translateY(7px); }
 }
 
 @keyframes scroll-chevron {
     0%, 35%, 100% { opacity: .35; transform: translateY(0) rotate(45deg); }
-    55% { opacity: 1; transform: translateY(4px) rotate(45deg); }
+    55% { opacity: 1; transform: translateY(3px) rotate(45deg); }
 }
 
 @media (max-width: 480px) {
-    .scroll-cue { bottom: 15px; }
-    .scroll-cue-label { font-size: 8px; }
+    .scroll-cue { bottom: calc(12px + env(safe-area-inset-bottom)); }
+    .scroll-cue-label { font-size: 7px; }
 }
 
 @media (min-width: 721px) {
     .scroll-cue {
         left: 42px;
-        bottom: 30px;
+        bottom: calc(24px + env(safe-area-inset-bottom));
         transform: none;
     }
 }
