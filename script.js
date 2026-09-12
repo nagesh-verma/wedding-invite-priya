@@ -4,7 +4,17 @@ const tap=document.querySelector("#tapHere");
 const invitation=document.querySelector("#invitation");
 const music=document.querySelector("#music");
 
-if(video){ video.volume = 0.5; }
+if(video){
+  video.volume = 0.5;
+  video.preload = "metadata";
+}
+
+function ensureVideoReady(){
+  if(!video) return;
+  if(video.readyState === 0){
+    video.load();
+  }
+}
 
 function startBackgroundMusic(){
   if(!music) return;
@@ -42,6 +52,7 @@ function openInvitation(){
 
 tap.addEventListener("click",async(e)=>{
   e.stopPropagation();
+  ensureVideoReady();
   opening.classList.add("playing");
   if(video){ video.volume = 0.2; }
   video.muted=false;
