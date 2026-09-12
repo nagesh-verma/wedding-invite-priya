@@ -1,0 +1,8 @@
+Add these two files to this folder:
+1. wedding-opening.mp4  — the opening invitation video
+2. background.mp3       — the background music
+
+Optional:
+3. opening-poster.jpg   — poster shown before video loads
+
+The HTML already points to these filenames.
